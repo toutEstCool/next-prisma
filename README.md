@@ -43,7 +43,7 @@ Follow the following steps to get development environment running.
   _OR USING SSH_
 
   ```bash
-  
+  git@github.com:toutEstCool/next-prisma.git
   ```
 
 * Install node modules
