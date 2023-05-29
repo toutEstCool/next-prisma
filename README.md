@@ -37,7 +37,7 @@ Follow the following steps to get development environment running.
 
 
   ```bash
-  git clone ''
+  git clone https://github.com/toutEstCool/next-prisma.git
   ```
 
   _OR USING SSH_
