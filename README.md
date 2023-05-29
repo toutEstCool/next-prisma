@@ -58,7 +58,7 @@ Follow the following steps to get development environment running.
 * Build application
 
   ```bash
-  yarn start
+  npm start dev
   ```
 ---
 
