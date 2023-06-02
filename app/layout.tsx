@@ -1,11 +1,12 @@
+import NavBar from './components/navbar/NavBar'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const nunito = Nunito({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Next 13 Prisma ORM',
-  description: 'My personal project',
+  title: 'Vacation Homes & Condo Rentals - Airbnb',
+  description: 'Find the perfect place to stay at an amazing price in 191 countries. Belong anywhere with Airbnb.',
 }
 
 export default function RootLayout({
@@ -16,7 +17,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={nunito.className}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   )
 }
