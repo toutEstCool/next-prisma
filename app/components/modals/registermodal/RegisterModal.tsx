@@ -4,6 +4,8 @@ import Modal from "../Modal";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import axiso from 'axios';
+import Heading from "../../heading/Heading";
+import Inputs from "../../inputs/Inputs";
 
 const RegisterModal: React.FC = (): JSX.Element => {
   const registerModal = useRegisterModal()
@@ -34,7 +36,34 @@ const RegisterModal: React.FC = (): JSX.Element => {
   }
   const bodyContent = (
     <div className='flex flex-col gap-4'>
-      Hello body...2222
+      <Heading 
+       title='Welcome to Airbnb'
+       subtitle='Create an account!'
+      />
+      <Inputs 
+        id='email'
+        label='Email'
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Inputs 
+        id='name'
+        label='Name'
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Inputs 
+        id='password'
+        label='Password'
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
     </div>
   )
   return (

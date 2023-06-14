@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IPropsClientOnly } from './IProps.interface';
 
 export const ClientOnly: React.FC<IPropsClientOnly> = ({ children }): JSX.Element | null => {
-  const [hasMounted, setHasMounted] = React.useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
   
-  React.useEffect(() => {
+  useEffect(() => {
     setHasMounted(true)
   }, [])
 

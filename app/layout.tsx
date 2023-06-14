@@ -1,6 +1,5 @@
 import React from 'react'
-import { ClientOnly } from './components/ClientOnly/ClientOnly'
-import Modal from './components/modals/Modal'
+import { ClientOnly } from './components/clientonly/ClientOnly'
 import NavBar from './components/navbar/NavBar'
 import './globals.css'
 import { Nunito } from 'next/font/google'
