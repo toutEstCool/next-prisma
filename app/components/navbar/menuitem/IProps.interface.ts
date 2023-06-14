@@ -1,4 +1,4 @@
 export interface IPropsUserMenu {
   label: string
-  onClick?: () => void
+  onClick: () => void
 }
