@@ -6,6 +6,10 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import axiso from 'axios';
 import Heading from "../../heading/Heading";
 import Inputs from "../../inputs/Inputs";
+import { AiFillGithub } from "react-icons/ai";
+import { FcGoogle } from 'react-icons/fc'
+import Button from "../../button/Button";
+import { toast } from "react-hot-toast";
 
 const RegisterModal: React.FC = (): JSX.Element => {
   const registerModal = useRegisterModal()
@@ -28,7 +32,7 @@ const RegisterModal: React.FC = (): JSX.Element => {
         registerModal.onClose()
       })
       .catch((error) => {
-        console.log(error);
+        toast.error('Something Went Wrong 👾')
       })
       .finally(() => {
         setIsLoading(false)
@@ -66,6 +70,43 @@ const RegisterModal: React.FC = (): JSX.Element => {
       />
     </div>
   )
+
+  const footerContent = (
+      <div className='flex flex-col gap-4 mt-5'>
+        <hr />
+        <Button 
+          outline
+          label='Continue with Google'
+          icon={FcGoogle}
+          onClick={() => {}}
+        />
+        <Button 
+          outline
+          label='Continue with GitHub'
+          icon={AiFillGithub}
+          onClick={() => {}}
+        />
+        <div 
+          className="
+            text-neutral-500 
+            text-center 
+            mt-4 
+            font-light
+          "
+        >
+          <p>Already have an account?
+            <span 
+              onClick={registerModal.onClose} 
+              className="
+                text-neutral-800
+                cursor-pointer 
+                hover:underline
+              "
+              > Log in</span>
+          </p>
+        </div>
+      </div>
+  )
   return (
     <Modal 
       disabled={isLoading}
@@ -75,6 +116,7 @@ const RegisterModal: React.FC = (): JSX.Element => {
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
+      footer={footerContent}
     />
   )
 } 
