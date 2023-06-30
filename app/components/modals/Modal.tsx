@@ -11,6 +11,7 @@ const Modal: React.FC<IPropsModal> = ({
   onSubmit,
   title,
   body,
+  footer,
   actionLabel,
   disabled,
   secondaryAction,
@@ -80,6 +81,7 @@ const Modal: React.FC<IPropsModal> = ({
                 }
                 <Button disabled={disabled} label={actionLabel} onClick={handleSubmit}/>
               </div>
+              {footer}
             </div>
             </div>
           </div>
