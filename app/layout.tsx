@@ -5,6 +5,8 @@ import './globals.css'
 import { Nunito } from 'next/font/google'
 import RegisterModal from './components/modals/registermodal/RegisterModal'
 import ToastProvider from './providers/ToastProvider'
+import getCurrentUser from './actions/getCurrentUser'
+import LoginModal from './components/modals/loginmodal/LoginModal'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -13,18 +15,20 @@ export const metadata = {
   description: 'Find the perfect place to stay at an amazing price in 191 countries. Belong anywhere with Airbnb.',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const currentUser = await getCurrentUser()
   return (
     <html lang="en">
       <body className={nunito.className}>
         <ClientOnly>
           <ToastProvider />
+          <LoginModal />
           <RegisterModal />
-          <NavBar />
+          <NavBar currentUser={ currentUser }/>
         </ClientOnly>
         {children}
       </body>

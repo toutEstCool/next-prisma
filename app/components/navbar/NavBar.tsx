@@ -4,8 +4,13 @@ import styles from './index.module.scss';
 import Search from "./search/Search";
 import UserMenu from "./usermenu/UserMenu";
 import Container from "../container/Container";
+import { User } from "@prisma/client";
 
-const NavBar: React.FC = (): JSX.Element => {
+interface IPropsNavBar {
+  currentUser?: User | null
+}
+
+const NavBar: React.FC<IPropsNavBar> = ({ currentUser }): JSX.Element => {
   return (
     <div className={styles.navbarContainer}>
     <div className={styles.navBarContainerWrapper}>
@@ -13,7 +18,7 @@ const NavBar: React.FC = (): JSX.Element => {
         <div className={styles.navBarContainerWrapperItems}>
           <Logo />
           <Search />
-          <UserMenu />
+          <UserMenu currentUser={ currentUser }/>
         </div>
       </Container>
     </div>
