@@ -1,13 +1,14 @@
 'use client';
+
 import Logo from "./logo/Logo";
 import styles from './index.module.scss';
 import Search from "./search/Search";
 import UserMenu from "./usermenu/UserMenu";
 import Container from "../container/Container";
-import { User } from "@prisma/client";
+import { SafeUser } from "@/app/types";
 
 interface IPropsNavBar {
-  currentUser?: User | null
+  currentUser?: SafeUser | null
 }
 
 const NavBar: React.FC<IPropsNavBar> = ({ currentUser }): JSX.Element => {
