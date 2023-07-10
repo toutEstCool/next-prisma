@@ -14,8 +14,6 @@ interface IPropsUserMenu {
 }
 
 const UserMenu: React.FC<IPropsUserMenu> = ({ currentUser }): JSX.Element => {
-  console.log(currentUser);
-  
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
 

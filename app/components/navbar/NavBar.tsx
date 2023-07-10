@@ -6,6 +6,7 @@ import Search from "./search/Search";
 import UserMenu from "./usermenu/UserMenu";
 import Container from "../container/Container";
 import { SafeUser } from "@/app/types";
+import Categories from "./categories/Categories";
 
 interface IPropsNavBar {
   currentUser?: SafeUser | null
@@ -23,6 +24,7 @@ const NavBar: React.FC<IPropsNavBar> = ({ currentUser }): JSX.Element => {
         </div>
       </Container>
     </div>
+    <Categories />
   </div>
   )
 }
